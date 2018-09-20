@@ -161,4 +161,4 @@ Anchore policies can be configured to check that the needed exposed ports are op
 
 ## Conclusion
 
-The above findings outline which sections of the CIS Docker Benchmark can achieved with Anchore and Anchore polcies. It is highly recommended that other tools be used in combination to achieve and secure CI image pipeline in order to accomplish a more complete CIS Docker Benchmark score. 
+The above findings outline which sections of the CIS Docker Benchmark can achieved with Anchore and Anchore policies. It is highly recommended that other tools be used in combination to achieve and secure CI image pipeline in order to accomplish a more complete CIS Docker Benchmark score. 

@@ -79,7 +79,62 @@ Anchore helps with this when built in with a secure CI pipeline. As an example, 
 
 ### 4.3 Do not install unnecessary packages in the container (Not Scored)
 
+It is generally a best practice to not install anything outside of the usage scope of the container. By bringing additional software packages that are not utilized, the attack surface of the container is increased. 
 
+Anchore policies get be set to look for only a set list of software packages, or look for a slimmed down version of the base image by checking the `FROM` instruction. By using minimal base images or alpine, not only is the size of the image greatly decreased, the threat surface area of the container is decreased. 
+
+### 4.4 Scan and rebuild the images to include security patches (Not Scored)
+
+Images should be scanned frequently. If vulnerabilites are discovered within images, they should be patched/fixed, rebuilt, and pushed to the registry for instatiation. 
+
+Anchore scans can be conducted as part of a normal CI pipeline, doing this ensures the frequency of scans is in-line with image builds. Anchore vulnerability feeds are consistently being updated with newer vulnerabilities as they are made available to the public. By watching image repositories and tags within Anchore, webhook notifications can be configured to alert the appropriate teams when new vulnerabilites are impactful to a watched image or tag. 
+
+Anchore policy checks during the CI pipeline can be set up to stop container images with vulnerable software packages from ever reaching a trusted registry.
+
+### 4.5 Enable Content trust for Docker (Scored)
+
+Enable content trust for Docker and use digital signatures with a tool like Notary to ensure that only trusted Docker images can be pushed to registry. 
+
+While this is not directly enforceable by Anchore, setting up Anchore policy checks within a CI pipeline to only sign images that have passed an evaluation is part of a secure CI best practice. 
+
+### 4.6 Add HEALTHCHECK instruction to the container image (Scored)
+
+Add the `HEALTHCHECK` instruction within your Dockerfiles. This ensures the engine will periodically check the running container against that instruction. Based on the output of the healthcheck, docker could exit a non-working container and instantiate a new one. 
+
+Anchore policy checks can be configured to ensure the `HEALTHCHECK` instruction is present within a Dockerfile.
+
+### 4.7 Do not use update instructions alone in the Dockerfile (Not Scored)
+
+Make sure to not use update instruction alone or in a single line within a Dockerfile. Doing this will cache the update layer, and potentially could deny a fresh update when the Docker image is built again. 
+
+Anchore policy checks can be configured to look for regular expressions specific to an update instruction alone or in a single line. Following this, a warning notification could be sent out. 
+
+### 4.8 Remove setuid and setgid permissions in the images (Not Scored)
+
+Remove setuid and setgid permission in the images to prevent escalation attacks in the containers. 
+
+Anchore policy checks can be set to only allow setuid and setgid permission on executables which need them. These permissions could be removed during build time by explicitly stating the following in the Dockerfile:
+
+`RUN find / -perm +6000 -type f -exec chmod a-s {} \; || true`
+
+### 4.9 Use COPY instead of ADD in Dockerfile (Not Scored)
+
+Use the `COPY` instruction instead of the `ADD` instruction in Dockerfiles.
+
+Anchore policy checks can be setup to warn when `ADD` instruction in present in a Dockerfile.
+
+### 4.10 Do not store secrets in Dockerfiles (Not Scored)
+
+Do not store secrets in Dockerfiles.
+
+Anchore policy checks can be configured to look for secrets (AWS keys, API keys, or other regular expressions) that may be present within an image.
+
+
+### 4.11 Install verified packages only (Not Scored)
+
+Verify authenticity of packages before installing them in the image. 
+
+Since Anchore can inspect the Dockerfile, policy checks can be configured to only allow allowed packages to be installed during a Docker build. 
 
 ## 5 Container Runtime
 

@@ -34,17 +34,17 @@ The following configuration profiles are defined by this Benchmark:
 
 Items in this profile intend to:
 
-    - Be practical and prudent
-    - Provide a clear security benefit
-    - Not inhibit the utility of the technology beyond acceptable means
+- Be practical and prudent
+- Provide a clear security benefit
+- Not inhibit the utility of the technology beyond acceptable means
 
 ### Level 2 - Docker
 
 Items in this profile exhibit one or more of the following characteristics: 
 
-    - Are intended for environments or use cases where security is paramount
-    - Acts as defense in depth measure
-    - May negatively inhibit the utility or performance of the technology
+- Are intended for environments or use cases where security is paramount
+- Acts as defense in depth measure
+- May negatively inhibit the utility or performance of the technology
 
 
 

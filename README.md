@@ -138,3 +138,22 @@ Since Anchore can inspect the Dockerfile, policy checks can be configured to onl
 
 ## 5 Container Runtime
 
+Although Anchore focus in mainly pre-runtime, there are countermeasures that can be taken during the build stage prior to instatiation to help mitigate container runtime threats. 
+
+### 5.6 Do not run ssh within containers (Scored)
+
+SSH server should not be running within the conatiner. 
+
+Anchore policies can be configured to check for exposed port 22. 
+
+### 5.7 Do not map privileged ports within containers (Scored)
+
+The TCP/IP port number below 1024 are considers privileged ports. Normal users and processes are not allowed to use them for various security reasons. 
+
+Anchore policies can be configured to check for these exposed ports. 
+
+### 5.8 Only open needed ports on container (Scored)
+
+Dockerfile for container images should only defined needed ports for container usage. 
+
+Anchore policies can be configured to check that the needed exposed ports are open.

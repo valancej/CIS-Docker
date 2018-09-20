@@ -48,22 +48,22 @@ Items in this profile exhibit one or more of the following characteristics:
 
 
 
-## Host Configuration
+## 1 Host Configuration
 
 Security tools specific to the Host Configuration are not achievable with Anchore.
 
-## Docker daemon configuration
+## 2 Docker daemon configuration
 
 Security tools specific to the Docker daemon are not achievable with Anchore.
 
 
-## Docker daemon configuration files
+## 3 Docker daemon configuration files
 
 Security tools specific to the Docker daemon configuration are not achievable with Anchore.
 
-## Container Images and Build files
+## 4 Container Images and Build files
 
+Docker container images and their corresponding Dockerfiles govern how a container will behave when running. It is important to use the appropriate base images, and best practices when creating Dockerfiles to secure your containerized applications and infrastructure. 
 
-
-## Container Runtime
+## 5 Container Runtime
 

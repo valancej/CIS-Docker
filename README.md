@@ -48,20 +48,20 @@ Items in this profile exhibit one or more of the following characteristics:
 
 
 
-## 1 Host Configuration
+## (1) Host Configuration
 
 Security tools specific to the Host Configuration are not achievable with Anchore.
 
-## 2 Docker daemon configuration
+## (2) Docker daemon configuration
 
 Security tools specific to the Docker daemon are not achievable with Anchore.
 
 
-## 3 Docker daemon configuration files
+## (3) Docker daemon configuration files
 
 Security tools specific to the Docker daemon configuration are not achievable with Anchore.
 
-## 4 Container Images and Build files
+## (4) Container Images and Build files
 
 Docker container images and their corresponding Dockerfiles govern how a container will behave when running. It is important to use the appropriate base images, and best practices when creating Dockerfiles to secure your containerized applications and infrastructure. 
 
@@ -136,7 +136,7 @@ Verify authenticity of packages before installing them in the image.
 
 Since Anchore can inspect the Dockerfile, policy checks can be configured to only allow allowed packages to be installed during a Docker build. 
 
-## 5 Container Runtime
+## (5) Container Runtime
 
 Although Anchore focuses in mainly pre-runtime, there are countermeasures that can be taken during the build stage prior to instatiation to help mitigate container runtime threats. 
 

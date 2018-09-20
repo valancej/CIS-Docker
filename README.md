@@ -138,7 +138,7 @@ Since Anchore can inspect the Dockerfile, policy checks can be configured to onl
 
 ## 5 Container Runtime
 
-Although Anchore focus in mainly pre-runtime, there are countermeasures that can be taken during the build stage prior to instatiation to help mitigate container runtime threats. 
+Although Anchore focuses in mainly pre-runtime, there are countermeasures that can be taken during the build stage prior to instatiation to help mitigate container runtime threats. 
 
 ### 5.6 Do not run ssh within containers (Scored)
 

@@ -4,7 +4,7 @@
 
 As Docker usage has greatly increased, it has become increasingly important to gain a better understanding of how to securely configure and deploy Dockerized applications. The Center for Internet Security published 1.13 Docker Benchmark, which provides consesus based guidance by subject matter experts for users and organizations to achieve secure Docker usage and configuration. 
 
-We previously published a blog on how Anchore can help achieve NIST 800-190 compliance, this post will detail how Anchore can help with CIS Docker Benchmarks 1.13. The publication focuses on five areas: 
+We previously published a blog on how Anchore can help achieve NIST 800-190 compliance. This post will detail how Anchore can help with certain sections of CIS Docker Benchmarks 1.13. The publication focuses on five areas that are specific to Docker: 
 
 - Host Configuration
 - Docker daemon configuration
@@ -12,7 +12,7 @@ We previously published a blog on how Anchore can help achieve NIST 800-190 comp
 - Container Images and Build File
 - Container Runtime
 
-Anchore is a service that analyzes Docker images and applies user-defined acceptance policies to allow automated container image validation and certification. The critical component in helping achieve any sort of compliance are Anchore Policy Bundles. With these, users have full control over what specific policy rules they would like their Docker images to adhere to. 
+Anchore is a service that analyzes Docker images pre-runtime and applies user-defined acceptance policies to allow automated container image validation and certification. Anchore is more commonly used with a CI tool similar to Jenkins in order to streamline container image builds in a more automated fashion. The critical component in helping achieve any sort of compliance are Anchore Policy Bundles. With these, users have full control over what specific policy rules they would like their Docker images to adhere to, and potentially fail or warn users based on the outcome of these evaluations.  
 
 ## Scoring Information
 

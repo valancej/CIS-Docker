@@ -65,5 +65,11 @@ Security tools specific to the Docker daemon configuration are not achievable wi
 
 Docker container images and their corresponding Dockerfiles govern how a container will behave when running. It is important to use the appropriate base images, and best practices when creating Dockerfiles to secure your containerized applications and infrastructure. 
 
+### 4.1 Create a user for the container (Scored)
+
+Create a non-root user for the container in the Dockerfile for the container image. It it generally good practice to run a Docker container as a non-root user. 
+
+When creating Dockerfiles make sure the `USER` instruction exists. This can be achieved with an Anchore policy by checking for the `USER` instruction, as well as checking to make sure the effective user is not root.
+
 ## 5 Container Runtime
 

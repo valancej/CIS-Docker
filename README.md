@@ -157,3 +157,8 @@ Anchore policies can be configured to check for these exposed ports.
 Dockerfile for container images should only defined needed ports for container usage. 
 
 Anchore policies can be configured to check that the needed exposed ports are open.
+
+
+## Conclusion
+
+The above findings outline which sections of the CIS Docker Benchmark can achieved with Anchore and Anchore polcies. It is highly recommended that other tools be used in combination to achieve and secure CI image pipeline in order to accomplish a more complete CIS Docker Benchmark score. 

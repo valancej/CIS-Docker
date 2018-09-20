@@ -1,4 +1,4 @@
-# CIS Docker Benchmark
+# How Anchore can help CIS Docker Benchmark
 
 ## Introduction
 

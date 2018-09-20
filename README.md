@@ -1,8 +1,8 @@
-# CIS Docker Benchmarks
+# CIS Docker Benchmark
 
 ## Introduction
 
-As Docker usage has greatly increased, it has become increasingly important to gain a better understanding of how to securely configure and deploy Dockerized applications. The Center for Internet Security published 1.13 Docker Benchmarks, which provides consesus based guidance by subject matter experts for users and organizations to achieve secure Docker usage and configuration. 
+As Docker usage has greatly increased, it has become increasingly important to gain a better understanding of how to securely configure and deploy Dockerized applications. The Center for Internet Security published 1.13 Docker Benchmark, which provides consesus based guidance by subject matter experts for users and organizations to achieve secure Docker usage and configuration. 
 
 We previously published a blog on how Anchore can help achieve NIST 800-190 compliance, this post will detail how Anchore can help with CIS Docker Benchmarks 1.13. The publication focuses on five areas: 
 

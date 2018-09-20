@@ -71,5 +71,15 @@ Create a non-root user for the container in the Dockerfile for the container ima
 
 When creating Dockerfiles make sure the `USER` instruction exists. This can be achieved with an Anchore policy by checking for the `USER` instruction, as well as checking to make sure the effective user is not root.
 
+### 4.2 Use trusted base images for containers (Not Scored)
+
+Ensure that container images come from trusted sources. Official repositories are Docker images curated and optimized by the Docker community or vendor. As an organizational best practice, setting up a trusted Docker registry where your developers are allowed to push and pull images from is seen as secure. Configuration and use of Docker Content trust with Notary is helpful when achieving this. 
+
+Anchore helps with this when built in with a secure CI pipeline. As an example, once an image has been built, it is then scanned and analyzed by Anchore, if it passes Anchore policies it is now safe to be pushed to a designated trusted Docker registry. If the image does not pass Anchore checks, it does not get pushed to a registry. Anchore policies can be set up to make sure base images are coming from trusted registries as well. 
+
+### 4.3 Do not install unnecessary packages in the container (Not Scored)
+
+
+
 ## 5 Container Runtime
 
